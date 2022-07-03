@@ -8,7 +8,7 @@ TELEGRAM_TOKEN = os.environ.get("TOKEN")
 TELEGRAM_ID = os.environ.get("ID")
 
 
-def auth() -> dict | bool:
+def auth():
     token_url = "https://konta1.ksdo.gov.pl/connect/token"
     payload = {
         "grant_type": "password",
@@ -65,6 +65,8 @@ def telegram_send_message(message):
 
 
 if __name__ == "__main__":
+    get_results()
+    telegram_send_message("test")
     while True:
         try:
             results_time = datetime.datetime.fromtimestamp(1657002600)
